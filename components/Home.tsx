@@ -7,10 +7,11 @@
     import Status from "./Status"
     import Feather from 'react-native-vector-icons/Feather'
     import { NativeStackScreenProps } from "@react-navigation/native-stack"
+    import { Assets } from "../constants/image"
     import { TabView, SceneMap } from 'react-native-tab-view';
 
     // import { FlatList, TouchableOpacity } from "react-native-gesture-handler"
-    import { Assets } from "../constants/image"
+  
 
     interface ChatItem {
         Name: string;
@@ -175,7 +176,7 @@
                 <Text>Status</Text>
                 <View>
                 <View style={{ width: 50, height: 50, borderRadius: 25, marginRight: 10, overflow: 'hidden' }}>
-        <ImageBackground source={Assets.profile} style={{ width: '100%', height: '100%' }}>
+        <ImageBackground source={Assets.Profile} style={{ width: '100%', height: '100%' }}>
         </ImageBackground>
           </View>
                     
@@ -236,29 +237,7 @@
     
         return(
             <>
-                <View style={{backgroundColor: '#054C44', height:30}}></View>
-                <View style={{backgroundColor: '#075E55', height:40,padding:20}}>
-                <View style={{flex:1,flexDirection:'row', justifyContent:'flex-end', alignContent:'center', alignItems:'center',marginTop:8, position:'absolute', left:30}}>
-                    <View style={{flex:1,flexDirection:'row', alignContent: 'center'}}>
-                        <Text style={{color:'white'}}>Whatsapp</Text>
-                    </View>
-                  <View style={{flex:1, flexDirection:'row', position:'absolute', gap:10}}>
-                        {isSearchVisible? (
-                            <TextInput
-                                style={{height: 30, borderColor: 'gray', borderWidth: 1}}
-                                onChangeText={text => setSearchQuery(text)}
-                                value={searchQuery}
-                            />
-                        ) : (
-                            <EvilIcons name='search' color='white' onPress={toggleSearchVisibility}/>
-                        )}
-                        <View>
-                            <Entypo name='dots-three-vertical' color='white'/> 
-                        </View>
-                    </View>
-                
-                    </View>
-                    </View>
+               
 
                     <TabView
       navigationState={{ index, routes }}
